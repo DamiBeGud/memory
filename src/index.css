@@ -1,13 +1,110 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root{
+    --clr-300: white;
+    --clr-400: rgba(75,25,67,1);
+    --clr-500: rgba(200,74,183,0.958420868347339);
+    --clr-600: rgba(200,74,183,0.3);
+    --clr-700: red;
+
+    --text-clr: var(--clr-300);
+    --text-hover-clr:var(--clr-700);
+    
+    --gradient-clr-100: var(--clr-400);
+    --gradient-clr-200: var(--clr-500);
+
+    --ff-100: 'Poor Story', cursive;
+    --ff-200:'Press Start 2P', cursive;
+
+    --bodyfont: var(--ff-100);
+    --headerfont: var(--ff-200);
+    
+
+    --card-width: clamp(1em,3em,4em);
+    --card-height: 2em;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+    background: var(--gradient-clr-100);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family:var(--bodyfont);
+    font-size: 2rem;
+    color: var(--text-clr);
+    font-weight:900;
+    
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+/********************************** Menu Styles ***********************************/
+.menu-conteiner{
+    border: 3px solid white;
+    background-color: rgba(200,74,183,0.3);
+    width: 10em;
+    padding: .2em;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 2px 18px 16px 11px rgba(0,0,0,0.25); 
+    box-shadow: 0px 10px 13px -7px #000000, 2px 18px 16px 11px rgba(0,0,0,0.25); 
+    display: grid;
+    text-align: center;
+    border-radius: .75em;
+}
+.menu--header{
+    font-family: var(--headerfont);
+    font-size:  3rem;
+}
+.select-difficulty{
+    border: none;
+}
+input[type=radio]{
+    visibility:hidden;
+    margin-left: -1em;
+}
+input[type=radio]:hover + .input-lable{
+    color:var(--text-hover-clr);
+    cursor: pointer;
+}
+.button{
+    margin: 0 auto 2em auto;
+    width: fit-content;
+    padding: .5em .75em;
+    background-color: var(--gradient-clr-200);
+    color:var(--text-clr);
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: var(--text-clr);
+    border:2px solid transparent;
+    border-radius: .375em;
+}
+.button:hover{
+    cursor: pointer;
+    border: 2px solid  var(--gradient-clr-200);
+    color: var(--gradient-clr-200);
+    background-color: white;
+}
+/********************************** Card Styles ***********************************/
+
+.gameConteiner{
+    display: grid;
+    gap:.25em
+    
+}
+.cardsConteiner{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .25em;
+    margin-top: 1em;
+
+}
+.card{
+    background-image: url('images/memory.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: var(--card-width);
+    height: var(--card-height);    
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 2px 18px 16px 11px rgba(0,0,0,0.25); 
+    box-shadow: 0px 10px 13px -7px #000000, 2px 18px 16px 11px rgba(0,0,0,0.25);
+   border: 3px solid white ;
 }
